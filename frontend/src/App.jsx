@@ -7,10 +7,13 @@ import Settings from "./pages/settings";
 import AccountPage from "./pages/account-page";
 import Transactions from "./pages/transactions";
 import useStore from "./store";
+import { setAuthToken } from "./libs/apiCall";
+import { Toaster } from "sonner";
 
 const RootLayout = () => {
   const { user } = useStore((state) => state);
   console.log(user);
+  setAuthToken(user?.token || "");
 
   return !user ? (
     <Navigate to="sign-in" replace={true} />
@@ -44,6 +47,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </div>
+      <Toaster richColors position="top-center " />
     </>
   );
 }
