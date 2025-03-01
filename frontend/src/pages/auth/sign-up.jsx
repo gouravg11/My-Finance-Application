@@ -16,6 +16,8 @@ import { Separator } from "../../components/ui/separator";
 import Input from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import { BiLoader } from "react-icons/bi";
+import api from "../../libs/apiCall";
+import { toast } from "sonner";
 
 const RegisterSchema = z.object({
   email: z
@@ -49,6 +51,24 @@ const SignUp = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
+
+    try {
+      setLoading(true);
+      const { data: res } = await api.post("/auth/sign-up", data);
+
+      if (res?.user) {
+        toast.success("Account Created Succellfully, You can now login");
+
+        setTimeout(() => {
+          navigate("/sign-in");
+        }, 1500);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.response?.data?.message || error.message);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="flex items-center justify-center w-full min-h-screen py-10">
@@ -62,9 +82,6 @@ const SignUp = () => {
           <CardContent className="p-0">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="mb-8 space-y-6">
-                <SocialAuth isLoading={loading} setLoading={setLoading} />
-                <Separator />
-
                 <Input
                   disabled={loading}
                   id="firstName"
@@ -109,6 +126,11 @@ const SignUp = () => {
                 )}
               </Button>
             </form>
+
+            <div className="my-3">
+              <Separator />
+            </div>
+            <SocialAuth isLoading={loading} setLoading={setLoading} />
           </CardContent>
         </div>
         <CardFooter className="justify-center gap-2">

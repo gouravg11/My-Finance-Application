@@ -41,7 +41,7 @@ function App() {
             <Route path="/overview" element={<Dashboard />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/account" element={<AccountPage />} />
+            <Route path="/accounts" element={<AccountPage />} />
           </Route>
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
