@@ -24,7 +24,7 @@ export const SocialAuth = ({ isLoading, setLoading }) => {
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    setSelectedProvider("googel");
+    setSelectedProvider("google");
 
     try {
       const res = await signInWithPopup(auth, provider);
