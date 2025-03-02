@@ -43,6 +43,7 @@ function App() {
   }, [theme]);
   return (
     <main>
+      <Toaster position="top-center" />
       <div className="w-full min-h-screen px-6 bg-gray-100 md:px-20 dark:bg-slate-900">
         <Routes>
           <Route element={<RootLayout />}>
@@ -56,7 +57,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </div>
-      <Toaster richColors position="top-center " />
+      {/* <Toaster richColors position="top-center " /> */}
     </main>
   );
 }
