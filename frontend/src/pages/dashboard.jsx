@@ -7,6 +7,7 @@ import Stats from "../components/ui/stats";
 import Chart from "../components/ui/Chart";
 import RecentTransactions from "../components/ui/recent-transaction";
 import Accounts from "../components/ui/accounts";
+import DoughnutChart from "../components/ui/piechar";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
