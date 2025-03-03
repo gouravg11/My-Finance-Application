@@ -36,3 +36,4 @@ const DialogWrapper = ({ isOpen, closeModal, children }) => {
     </Transition>
   );
 };
+export default DialogWrapper;
