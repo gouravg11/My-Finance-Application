@@ -14,6 +14,7 @@ import { formatCurrency, maskAccountNumber } from "../libs";
 import AddAccount from "../components/ui/addAccount";
 import AddMoney from "../components/ui/AddMoney";
 import TransferMoney from "../components/ui/TransferMoney";
+import { BiTransfer } from "react-icons/bi";
 
 const ICONS = {
   crypto: (
@@ -90,11 +91,12 @@ const AccountPage = () => {
           <Title title="Accounts Infomarnation" />
           <div className="flex items-center gap-4">
             <Button
+              variant="ghost"
               onClick={() => setIsOpen(true)}
-              className="py-1.5 px-2 rounded bg-black dark:bg-violet-600 text-white dark:text-white flex items-center justify-center gap-2 border border-gray-500"
+              className="py-1.5 px-2 rounded bg-black dark:bg-violet-600 text-white dark:text-white flex items-center justify-center gap-2"
             >
               <MdAdd size={22} />
-              <span className="">Add</span>
+              <span className="">Add Account</span>
             </Button>
           </div>
         </div>
@@ -107,6 +109,15 @@ const AccountPage = () => {
           </>
         ) : (
           <>
+            <div className="flex flex-row">
+              <Button
+                onClick={() => handleTransferMoney()}
+                className={`group flex gap-2  items-center rounded-md px-2 py-2 text-sm text-gray-700 dark:text-gray-300`}
+              >
+                <BiTransfer />
+                Transfer Funds
+              </Button>
+            </div>
             <div className="w-full grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 py-10 gap-6">
               {data?.map((acc, index) => (
                 <div
@@ -126,10 +137,10 @@ const AccountPage = () => {
                           className="text-emerald-600 ml-1"
                         />
                       </div>
-                      <AccountMenu
+                      {/* <AccountMenu
                         addMoney={() => handleOpenAddMoney(acc)}
                         transferMoney={() => handleTransferMoney(acc)}
-                      />
+                      /> */}
                     </div>
 
                     <span className="text-gray-600 dark:text-gray-400 font-light leading-loose">

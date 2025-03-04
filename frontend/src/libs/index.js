@@ -14,17 +14,11 @@ export const maskAccountNumber = (accountNumber) => {
 };
 
 export const formatCurrency = (value) => {
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  if (isNaN(value)) {
-    return "Invalid input";
-  }
-
   const numberValue = typeof value === "string" ? parseFloat(value) : value;
 
   return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: user?.currency || "USD",
+    currency: "INR",
     minimumFractionDigits: 2,
   }).format(numberValue);
 };
