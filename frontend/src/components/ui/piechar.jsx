@@ -24,6 +24,22 @@ const DoughnutChart = ({ dt }) => {
       <ResponsiveContainer width={"100%"} height={500}>
         <PieChart widht={500} height={400}>
           <Tooltip />
+          <Legend />
+          <Pie
+            data={data}
+            innerRadius={110}
+            outerRadius={180}
+            full="#884d8"
+            paddingAngle={5}
+            dataKey={"value"}
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
         </PieChart>
       </ResponsiveContainer>
     </div>

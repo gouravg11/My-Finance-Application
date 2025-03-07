@@ -94,63 +94,53 @@ const SettingsForm = () => {
                 <BsChevronExpand className="text-gray-400" />
               </ComboboxButton>
             </div>
-            <Transition
-              as={Fragment}
-              leave="transition ease-in duration-100"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-              afterLeave={() => setQuery("")}
-            >
-              <ComboboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-slate-900 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-                {filteredCountries.length === 0 && query !== "" ? (
-                  <div className="relative cursor-default select-none px-4 py-2 text-gray-700 dark:text-gray-500">
-                    Nothing found.
-                  </div>
-                ) : (
-                  filteredCountries?.map((country, index) => (
-                    <ComboboxOption
-                      key={country.country + index}
-                      className={({ active }) =>
-                        `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                          active
-                            ? "bg-violet-600/20 text-white"
-                            : "text-gray-900"
-                        }`
-                      }
-                      value={country}
-                    >
-                      {({ selected, active }) => (
-                        <>
-                          <div className="flex items-center gap-2">
-                            <img
-                              src={country?.flag}
-                              alt={country.country}
-                              className="w-8 h-5 rounded-sm object-cover"
-                            />
-                            <span
-                              className={`block truncate text-gray-700 dark:text-gray-500 ${
-                                selected ? "font-medium" : "font-normal"
-                              }`}
-                            >
-                              {country?.country}
-                            </span>
-                          </div>
-                          {selected ? (
-                            <span
-                              className={` absolute inset-y-0 left-0 flex items-center pl-3 ${
-                                active ? "text-white" : "text-teal-600"
-                              }`}
-                            >
-                              <BiCheck className="h-5 w-5" aria-hidden="true" />
-                            </span>
-                          ) : null}
-                        </>
-                      )}
-                    </ComboboxOption>
-                  ))
-                )}
-              </ComboboxOptions>
-            </Transition>
+            <ComboboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-slate-900 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+              {filteredCountries.length === 0 && query !== "" ? (
+                <div className="relative cursor-default select-none px-4 py-2 text-gray-700 dark:text-gray-500">
+                  Nothing found.
+                </div>
+              ) : (
+                filteredCountries?.map((country, index) => (
+                  <ComboboxOption
+                    key={country.country + index}
+                    className={({ active }) =>
+                      `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                        active ? "bg-violet-600/20 text-white" : "text-gray-900"
+                      }`
+                    }
+                    value={country}
+                  >
+                    {({ selected, active }) => (
+                      <>
+                        <div className="flex items-center gap-2">
+                          <img
+                            src={country?.flag}
+                            alt={country.country}
+                            className="w-8 h-5 rounded-sm object-cover"
+                          />
+                          <span
+                            className={`block truncate text-gray-700 dark:text-gray-500 ${
+                              selected ? "font-medium" : "font-normal"
+                            }`}
+                          >
+                            {country?.country}
+                          </span>
+                        </div>
+                        {selected ? (
+                          <span
+                            className={` absolute inset-y-0 left-0 flex items-center pl-3 ${
+                              active ? "text-white" : "text-teal-600"
+                            }`}
+                          >
+                            <BiCheck className="h-5 w-5" aria-hidden="true" />
+                          </span>
+                        ) : null}
+                      </>
+                    )}
+                  </ComboboxOption>
+                ))
+              )}
+            </ComboboxOptions>
           </div>
         </Combobox>
       </div>
@@ -220,7 +210,7 @@ const SettingsForm = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="w-full">
           <span className="labelStyles">Country</span>
           <Countries />
@@ -232,7 +222,7 @@ const SettingsForm = () => {
             <option>{selectedCountry?.country || user?.country}</option>
           </select>
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full flex items-center justify-between pt-5">
         <div className="">
@@ -276,18 +266,13 @@ const SettingsForm = () => {
       <div className="flex items-center gap-6 justify-end pb-10 border-b-2 border-gray-200 dark:border-gray-800">
         <Button
           variant="outline"
-          loading={loading}
           type="reset"
           className="px-6 bg-transparent text-black dark:text-white border bordre-gray-200 dark:border-gray-800"
         >
           Reset
         </Button>
 
-        <Button
-          loading={loading}
-          type="submit"
-          className="px-8 bg-violet-800 text-white"
-        >
+        <Button type="submit" className="px-8 bg-violet-800 text-white">
           {loading ? <BiLoader className="animate-spin text-white" /> : "Save"}
         </Button>
       </div>
