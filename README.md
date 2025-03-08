@@ -57,7 +57,7 @@ My-Finance is a financial management application that allows users to track thei
    ```
 2. Navigate to the project directory:
    ```bash
-   cd My-Finance
+   cd My-Finance-Application
    ```
 3. Install dependencies:
    ```bash
