@@ -48,7 +48,7 @@ My-Finance is a financial management application that allows users to track thei
   - Phone Number
 - Users can **update personal details**.
 - Option to **change the password**.
-  ![Settings](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Settings.png)
+  ![Settings](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/image.png)
   ![Settings_2](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Settings_2.png)
 
 ## Technologies Used
