@@ -20,6 +20,8 @@ My-Finance is a financial management application that allows users to track thei
 - Shows a **graph** representing income and expenses over time.
 - Includes a **pie chart** to display the income vs. expense percentage.
 - Lists **latest transactions** of the user.
+  ![Dashboard](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Dashboard.png)
+  ![Dashboard_2](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Dashboard_2.png)
 
 ### 2. Transactions
 - **Filter transactions** by date range.
@@ -31,11 +33,13 @@ My-Finance is a financial management application that allows users to track thei
   - Source
   - Amount
   - View Details
+    ![Transaction Page](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Transactions.png)
 
 ### 3. Accounts
 - Option to **add an account** (Currently supports four types of accounts).
 - **Transfer funds** between accounts.
 - Displays **all user accounts** along with their balances.
+  ![Accounts Page](https://raw.githubusercontent.com/gouravg11/My-Finance-Application/main/My-Finance-Application-Project/Accounts.png)
 
 ### 4. Settings
 - Displays user profile information:
@@ -44,6 +48,8 @@ My-Finance is a financial management application that allows users to track thei
   - Phone Number
 - Users can **update personal details**.
 - Option to **change the password**.
+  ![Settings](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Settings.png)
+  ![Settings_2](https://github.com/gouravg11/My-Finance-Application/blob/main/My-Finance-Application-Project/Settings_2.png)
 
 ## Technologies Used
 - **Frontend**: React, Vite, Tailwind CSS
