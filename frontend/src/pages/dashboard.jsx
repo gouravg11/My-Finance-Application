@@ -44,6 +44,8 @@ const Dashboard = () => {
       </div>
     );
   }
+
+  console.log("data : ", data);
   return (
     <div className="px-0 mid:px-5 2xl:px-20">
       <Info title="Dashboard" subTitle={"Monitor your financial activities"} />
@@ -61,7 +63,7 @@ const Dashboard = () => {
           <DoughnutChart
             dt={{
               balance: data?.availableBalance,
-              income: data?.tatalIncome,
+              income: data?.totalIncome,
               expense: data?.totalExpense,
             }}
           />
