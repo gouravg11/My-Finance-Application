@@ -103,9 +103,9 @@ const MobileSidebar = () => {
                   ))}
 
                   <div className="flex items-center justify-between py-6 px-4">
-                    <Popover.Button>
+                    {/* <Popover.Button>
                       <ThemeSwitch />
-                    </Popover.Button>
+                    </Popover.Button> */}
                     <UserMenu />
                   </div>
                 </div>

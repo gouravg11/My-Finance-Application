@@ -58,7 +58,7 @@ const ChangePassword = () => {
               }
             />
             <Input
-              disable={loading}
+              disabled={loading}
               type="password"
               name="newPassword"
               className="inputStyle"
@@ -70,7 +70,7 @@ const ChangePassword = () => {
             />
 
             <Input
-              disable={loading}
+              disabled={loading}
               type="password"
               name="newPassword"
               className="inputStyle"
@@ -91,7 +91,7 @@ const ChangePassword = () => {
         <div className="flex items-center gap-6 justify-end my-5 pb-10 border-b-2 border-gray-200 dark:border-gray-800">
           <Button
             variant="outline"
-            loading={loading}
+            // loading={loading}
             type="reset"
             className="px-6 bg-transparent text-black dark:text-white border bordre-gray-200 dark:border-gray-800"
           >
@@ -99,7 +99,7 @@ const ChangePassword = () => {
           </Button>
 
           <Button
-            loading={loading}
+            // loading={loading}
             type="submit"
             className="px-8 bg-violet-800 text-white"
           >
