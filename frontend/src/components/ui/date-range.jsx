@@ -55,7 +55,7 @@ const DateRange = () => {
         </label>
 
         <Input
-          className="inputStyles"
+          // className="inputStyles"
           name="dateFrom"
           type="date"
           max={dateTo}
@@ -72,7 +72,7 @@ const DateRange = () => {
           </label>
 
           <Input
-            className="inputStyles"
+            // className="inputStyles"
             name="dateFrom"
             type={"date"}
             value={dateTo}

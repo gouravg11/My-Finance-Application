@@ -29,13 +29,13 @@ const Stats = ({ dt }) => {
       label: "Total Expense",
       amount: dt?.expense,
       icon: <SiCashapp size={26} />,
-      increase: -10.9,
+      increase: 10.9,
     },
   ];
 
   const ItemCard = ({ item, index }) => {
     return (
-      <Card className="flex items-center justify-between w-full h-48 gap-5 px-4 py-12 shadow-lg shadow-black/60 2xl:min-w-96 2xl:px-8 dark:border-white md:py-10 md:px-10">
+      <Card className="flex items-center justify-between w-full h-40 gap-2 px-2 py-6 shadow-lg shadow-black/60 2xl:min-w-96 2xl:px-8 dark:border-white md:py-5 md:px-5">
         <div className="flex items-center w-full h-full gap-4">
           <div
             className={`w-12 h-12 flex items-center justify-center rounded-full ${ICON_STYLES[index]}`}

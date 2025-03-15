@@ -78,7 +78,13 @@ const AddTransaction = ({ isOpen, setIsOpen, refetch }) => {
   }, []);
   return (
     <DialogWrapper isOpen={isOpen} closeModal={closeModal}>
-      <DialogPanel className="w-full max-w-md tranform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 p-6 text-left align-middle shadow-xl transition-all">
+      <DialogPanel className="relative w-full max-w-md tranform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 p-6 text-left align-middle shadow-xl transition-all">
+        <button
+          className="absolute text-red-500 right-3 top-3"
+          onClick={closeModal}
+        >
+          Close
+        </button>
         <DialogTitle
           as="h3"
           className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-300 mb-4 uppercase"

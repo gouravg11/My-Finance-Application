@@ -43,14 +43,14 @@ const ViewTransaction = ({ data, isOpen, setIsOpen }) => {
           <p className="text-black dark:text-gray-400 text-2xl font-bold">
             <span
               className={`${
-                data?.type === "income" ? "text-emerald-600" : "text-red-600"
+                data?.type === "income" ? "text-emerald-600" : "text-red-400"
               }
                 font-bold mgl-1
                 `}
             >
-              {data?.type === "income" ? "+" : "-"}
-            </span>{" "}
-            {formatCurrency(data?.amount)}
+              {data?.type === "income" ? "+" : "-"}{" "}
+              {formatCurrency(data?.amount)}
+            </span>
           </p>
 
           <button
