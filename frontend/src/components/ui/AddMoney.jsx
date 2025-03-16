@@ -22,7 +22,7 @@ const AddMoney = ({ isOpen, setIsOpen, id, refetch }) => {
     try {
       setLoading(true);
 
-      const { data: res } = await api.put((`/account/add-money/${id}`, data));
+      const { data: res } = await api.put(`/account/add-money/${id}`, data);
 
       if (res?.data) {
         toast.success(res?.message);

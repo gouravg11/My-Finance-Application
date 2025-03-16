@@ -74,7 +74,7 @@ const Transactions = () => {
   console.log("INside transaction");
   if (isLoading) return <Loading />;
   return (
-    <div>
+    <>
       <div className="w-full py-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
           <Title title="Transactions Activity" />
@@ -178,12 +178,12 @@ const Transactions = () => {
                           className={`${
                             item?.type === "income"
                               ? "text-emerald-600"
-                              : "text-red-600"
+                              : "text-red-400"
                           } text-lg font-bold mgl-1`}
                         >
                           {item?.type === "income" ? "+" : "-"}
+                          {formatCurrency(item?.amount)}
                         </span>
-                        {formatCurrency(item?.amount)}
                       </td>
                       <td className="py-4 px-2">
                         <button
@@ -204,7 +204,7 @@ const Transactions = () => {
 
       <AddTransaction
         isOpen={isOpen}
-        setIsopen={setIsOpen}
+        setIsOpen={setIsOpen}
         refetch={fetchTransactions}
         key={new Date().getTime()}
       />
@@ -213,7 +213,7 @@ const Transactions = () => {
         isOpen={isOpenView}
         setIsOpen={setIsOpenView}
       />
-    </div>
+    </>
   );
 };
 

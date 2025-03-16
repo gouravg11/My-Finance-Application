@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { MdOutlineClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { RiCurrencyFill } from "react-icons/ri";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
 import { IoIosMenu } from "react-icons/io";
 import useStore from "../../store";
 import ThemeSwitch from "./switch";
@@ -20,14 +19,14 @@ const UserMenu = () => {
   const { user, setCredentials } = useStore((state) => state);
   const navigate = useNavigate();
 
-  const handleSingout = () => {
+  const handleSignOut = () => {
     localStorage.removeItem("user");
     setCredentials(null);
     navigate("/sign-in");
   };
 
   return (
-    <Menu as="div" className="relative  z-50">
+    <Menu as="div" className="relative z-50">
       <div>
         <Menu.Button className="">
           <div className="flex items-center gap-2">
@@ -47,12 +46,12 @@ const UserMenu = () => {
         </Menu.Button>
       </div>
       <TransitionWrapper>
-        <Menu.Items className="absolute z-50 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white dark:bg-slate-800  shadow-lg ring-1 ring-black/5 focus:outline-none">
-          <div className="px-1 py-1 ">
+        <Menu.Items className="absolute z-50 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white dark:bg-slate-800 shadow-lg ring-1 ring-black/5 focus:outline-none">
+          <div className="px-1 py-1">
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={handleSingout}
+                  onClick={handleSignOut}
                   className={`${
                     active
                       ? "bg-violet-500/10 text-gray-900 dark:text-white"
@@ -75,14 +74,11 @@ const MobileSidebar = () => {
   const path = location.pathname;
 
   return (
-    <div className="">
-      <Popover className="">
+    <div>
+      <Popover>
         {({ open }) => (
           <>
-            <Popover.Button
-              className={`
-               flex md:hidden items-center rounded-md font-medium focus:outline-none text-gray-600 dark:text-gray-400`}
-            >
+            <Popover.Button className="flex md:hidden items-center rounded-md font-medium focus:outline-none text-gray-600 dark:text-gray-400">
               {open ? <MdOutlineClose size={26} /> : <IoIosMenu size={26} />}
             </Popover.Button>
             <TransitionWrapper>
@@ -103,9 +99,6 @@ const MobileSidebar = () => {
                   ))}
 
                   <div className="flex items-center justify-between py-6 px-4">
-                    {/* <Popover.Button>
-                      <ThemeSwitch />
-                    </Popover.Button> */}
                     <UserMenu />
                   </div>
                 </div>
@@ -121,10 +114,9 @@ const MobileSidebar = () => {
 const Navbar = () => {
   const location = useLocation();
   const path = location.pathname;
-  const [openSidebar, setOpenSidebar] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between py-6">
+    <div className="w-full flex items-center justify-between py-6 px-4 sticky top-0 z-50 bg-gray-100 dark:bg-slate-900">
       <Link to="/">
         <div className="flex items-center gap-2 cursor-pointer">
           <div className="w-10 md:w-12 h-10 md:h-12 flex items-center justify-center bg-violet-700 rounded-xl">
@@ -152,8 +144,7 @@ const Navbar = () => {
       </div>
 
       <div className="hidden md:flex items-center gap-10 2xl:gap-20">
-        <ThemeSwitch />
-
+        {/* <ThemeSwitch /> */}
         <UserMenu />
       </div>
 

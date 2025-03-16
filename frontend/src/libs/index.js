@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 export const maskAccountNumber = (accountNumber) => {
-  if (typeof accountNumber !== "string" || accountNumber.length < 12) {
+  if (typeof accountNumber !== "string" || accountNumber.length <= 8) {
     return accountNumber;
   }
 

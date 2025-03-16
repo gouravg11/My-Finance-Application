@@ -47,7 +47,7 @@ const Dashboard = () => {
 
   console.log("data : ", data);
   return (
-    <div className="px-0 mid:px-5 2xl:px-20">
+    <div className="px-0 mid:px-2 2xl:px-5">
       <Info title="Dashboard" subTitle={"Monitor your financial activities"} />
       <Stats
         dt={{

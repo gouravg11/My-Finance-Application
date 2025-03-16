@@ -13,7 +13,7 @@ const RecentTransactions = ({ data }) => {
       <div className="flex items-center justify-between">
         <Title title="Latest Transaction" />
         <Link
-          to="/transaction"
+          to="/transactions"
           className="text-sm text-gray-600 dark:text-gray-500 hover:text-violet-600 hover:underline mr-5"
         >
           View All
@@ -79,8 +79,9 @@ const RecentTransactions = ({ data }) => {
                     }`}
                   >
                     {item?.type === "income" ? "+" : "-"}
+
+                    {formatCurrency(item?.amount)}
                   </span>
-                  {formatCurrency(item?.amount)}
                 </td>
               </tr>
             ))}

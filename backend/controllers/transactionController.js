@@ -50,11 +50,13 @@ export const getDashboardInformation = async (req, res) => {
 
     transactions.forEach((transaction) => {
       if (transaction.type === "income") {
-        totalIncome += transaction.totalamount;
+        totalIncome += +transaction.totalamount;
       } else {
-        totalExpense += transaction.totalamount;
+        totalExpense += +transaction.totalamount;
       }
     });
+
+    console.log("totalIncome, totalExpense : ", totalIncome, totalExpense);
 
     const availableBalance = totalIncome - totalExpense;
 

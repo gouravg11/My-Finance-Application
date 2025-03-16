@@ -18,7 +18,6 @@ const DoughnutChart = ({ dt }) => {
     { name: "Expense", value: Number(dt?.expense) },
   ];
 
-  // Custom function to display percentages
   const renderLabel = ({ name, value }) => {
     const total = data.reduce((sum, entry) => sum + entry.value, 0);
     const percentage = ((value / total) * 100).toFixed(2); // Convert to percentage
@@ -26,7 +25,7 @@ const DoughnutChart = ({ dt }) => {
   };
 
   return (
-    <div className="w-full md:w-1/3 flex flex-col items-center bg-gray-50 dark:bg-transparent">
+    <div className="w-full md:w-1/3 flex flex-col items-center bg-gray-100 dark:bg-transparent">
       <Title title="Summary" />
       <ResponsiveContainer width={"100%"} height={500}>
         <PieChart width={500} height={400}>
@@ -38,7 +37,7 @@ const DoughnutChart = ({ dt }) => {
             outerRadius={180}
             paddingAngle={5}
             dataKey="value"
-            label={renderLabel} // Use custom label function
+            label={renderLabel}
           >
             {data.map((entry, index) => (
               <Cell

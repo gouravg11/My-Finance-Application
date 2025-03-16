@@ -111,6 +111,7 @@ const AccountPage = () => {
           <>
             <div className="flex flex-row">
               <Button
+                variant="outline"
                 onClick={() => handleTransferMoney()}
                 className={`group flex gap-2  items-center rounded-md px-2 py-2 text-sm text-gray-700 dark:text-gray-300`}
               >
@@ -122,7 +123,7 @@ const AccountPage = () => {
               {data?.map((acc, index) => (
                 <div
                   key={index}
-                  className="w-full h-48 flex gap-4 bg-gray-50 dark:bg-slate-800 p-3 rounded shadow"
+                  className="w-full h-48 flex gap-4 shadow-2xl bg-gray-50 dark:bg-slate-800 p-3 rounded"
                 >
                   <div>{ICONS[acc?.account_name?.toLowerCase()]}</div>
                   <div className="space-y-2 w-full">
@@ -137,10 +138,6 @@ const AccountPage = () => {
                           className="text-emerald-600 ml-1"
                         />
                       </div>
-                      {/* <AccountMenu
-                        addMoney={() => handleOpenAddMoney(acc)}
-                        transferMoney={() => handleTransferMoney(acc)}
-                      /> */}
                     </div>
 
                     <span className="text-gray-600 dark:text-gray-400 font-light leading-loose">
@@ -148,9 +145,11 @@ const AccountPage = () => {
                     </span>
 
                     <p className="text-xs text-gray-600 dark:text-gray-400">
-                      {new Date(acc?.createdAt).toLocaleDateString("en-US", {
-                        dataStyle: "full",
-                      })}
+                      {acc?.createdat
+                        ? new Date(acc.createdat).toLocaleDateString("en-US", {
+                            dateStyle: "long", // Correct option instead of "full"
+                          })
+                        : "Date not available"}
                     </p>
 
                     <div className="flex items-center justify-between">
