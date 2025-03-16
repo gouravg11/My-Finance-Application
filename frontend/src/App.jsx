@@ -35,7 +35,7 @@ function App() {
   const { theme } = useStore((state) => state);
 
   useEffect(() => {
-    console.log("in useEffect ", theme);
+    // console.log("in useEffect ", theme);
     if (theme === "dark") {
       document.body.classList.add("dark");
     } else {

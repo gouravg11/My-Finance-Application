@@ -71,7 +71,7 @@ const Transactions = () => {
     fetchTransactions();
   }, [startDate, endDate]);
 
-  console.log("INside transaction");
+  // console.log("INside transaction");
   if (isLoading) return <Loading />;
   return (
     <>

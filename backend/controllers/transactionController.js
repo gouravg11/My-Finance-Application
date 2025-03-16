@@ -56,7 +56,7 @@ export const getDashboardInformation = async (req, res) => {
       }
     });
 
-    console.log("totalIncome, totalExpense : ", totalIncome, totalExpense);
+    // console.log("totalIncome, totalExpense : ", totalIncome, totalExpense);
 
     const availableBalance = totalIncome - totalExpense;
 

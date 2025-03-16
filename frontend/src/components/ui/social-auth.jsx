@@ -57,7 +57,7 @@ export const SocialAuth = ({ isLoading, setLoading }) => {
         setLoading(true);
 
         const { data: res } = await api.post("/auth/sign-in", userData);
-        console.log(res);
+        // console.log(res);
 
         if (res?.user) {
           toast.success(res?.message);

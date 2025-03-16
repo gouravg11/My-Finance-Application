@@ -2,7 +2,7 @@ import { Dialog, Transition, TransitionChild } from "@headlessui/react";
 import React, { Fragment } from "react";
 
 const DialogWrapper = ({ isOpen, closeModal, children }) => {
-  console.log("came inside dialog wrapper");
+  // console.log("came inside dialog wrapper");
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={closeModal}>

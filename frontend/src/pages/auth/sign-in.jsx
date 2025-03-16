@@ -46,7 +46,7 @@ const SignIn = () => {
   }, [user]);
 
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
 
     try {
       setLoading(true);

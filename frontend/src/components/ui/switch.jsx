@@ -14,7 +14,7 @@ const ThemeSwitch = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  console.log("theme is : ", theme);
+  // console.log("theme is : ", theme);
 
   return (
     <button onClick={toggleTheme} className="outline-none">

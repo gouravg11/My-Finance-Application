@@ -83,7 +83,7 @@ export const changePassword = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const { userId } = req.body.user;
-    console.log("User details", req.body);
+    // console.log("User details", req.body);
     const { firstname, lastname, country, currency, contact } = req.body;
 
     const userExist = await pool.query({
@@ -91,12 +91,12 @@ export const updateUser = async (req, res) => {
       values: [firstname, lastname, country, currency, contact, userId],
     });
 
-    updateUser.rows[0].password = undefined;
+    // updateUser.rows[0].password = undefined;
 
     res.status(200).json({
       status: "success",
       message: "User information updated successfully",
-      user: updateUser.rows[0],
+      // user: updateUser.rows[0],
     });
   } catch (error) {
     console.log(error);

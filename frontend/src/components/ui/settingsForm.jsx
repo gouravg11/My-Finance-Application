@@ -16,7 +16,7 @@ import Input from "./input";
 
 import { Button } from "./button";
 import api from "../../libs/apiCall";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 const SettingsForm = () => {
   const { user, theme, setTheme } = useStore((state) => state);
@@ -41,8 +41,8 @@ const SettingsForm = () => {
       setLoading(true);
       const newData = {
         ...values,
-        country: selectedCountry.country,
-        currency: selectedCountry.currency,
+        country: "India",
+        currency: "INR",
       };
       const { data: res } = await api.put(`/user`, newData);
 
@@ -64,21 +64,24 @@ const SettingsForm = () => {
     localStorage.setItem("theme", val);
   };
 
-  const filteredCountries =
-    query === ""
-      ? countriesData
-      : countriesData.filter((country) =>
-          country.country
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, ""))
-        );
+  // const filteredCountries =
+  //   query === ""
+  //     ? countriesData
+  //     : countriesData.filter((country) =>
+  //         country.country
+  //           .toLowerCase()
+  //           .replace(/\s+/g, "")
+  //           .includes(query.toLowerCase().replace(/\s+/g, ""))
+  //       );
 
-  const getCountriesList = async () => {
-    const data = await fetchCountries();
-    console.log("Countries data : ", data);
-    setCountriesData(data);
-  };
+  // useEffect(() => {
+  //   getCountriesList();
+  // }, []);
+  // const getCountriesList = async () => {
+  //   const data = await fetchCountries();
+  //   console.log("Countries : ", data);
+  //   setCountriesData(data);
+  // };
 
   const Countries = () => {
     return (

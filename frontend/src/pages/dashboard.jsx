@@ -45,7 +45,7 @@ const Dashboard = () => {
     );
   }
 
-  console.log("data : ", data);
+  // console.log("data : ", data);
   return (
     <div className="px-0 mid:px-2 2xl:px-5">
       <Info title="Dashboard" subTitle={"Monitor your financial activities"} />
@@ -53,7 +53,7 @@ const Dashboard = () => {
         dt={{
           balance: data?.availableBalance,
           income: data?.totalIncome,
-          expense: data?.totalIncome,
+          expense: data?.totalExpense,
         }}
       />
 
