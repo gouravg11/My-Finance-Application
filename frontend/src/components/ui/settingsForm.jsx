@@ -16,7 +16,7 @@ import Input from "./input";
 
 import { Button } from "./button";
 import api from "../../libs/apiCall";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 
 const SettingsForm = () => {
   const { user, theme, setTheme } = useStore((state) => state);
@@ -76,6 +76,7 @@ const SettingsForm = () => {
 
   const getCountriesList = async () => {
     const data = await fetchCountries();
+    console.log("Countries data : ", data);
     setCountriesData(data);
   };
 

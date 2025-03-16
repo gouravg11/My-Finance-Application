@@ -83,6 +83,7 @@ export const changePassword = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const { userId } = req.body.user;
+    console.log("User details", req.body);
     const { firstname, lastname, country, currency, contact } = req.body;
 
     const userExist = await pool.query({

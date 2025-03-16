@@ -145,9 +145,11 @@ const AccountPage = () => {
                     </span>
 
                     <p className="text-xs text-gray-600 dark:text-gray-400">
-                      {new Date(acc?.createdAt).toLocaleDateString("en-US", {
-                        dataStyle: "full",
-                      })}
+                      {acc?.createdat
+                        ? new Date(acc.createdat).toLocaleDateString("en-US", {
+                            dateStyle: "long", // Correct option instead of "full"
+                          })
+                        : "Date not available"}
                     </p>
 
                     <div className="flex items-center justify-between">
